@@ -1,0 +1,172 @@
+Questões e Respostas
+1.	O que é a JVM e qual seu papel na execução de um programa Java?
+•	Realizar a compilação dos códigos do ambiente para a máquina em os bytecodes., que é feita em 01010101.
+	Código:
+public class ExemploJVM {
+    public static void main(String[] args) {
+        System.out.println("Programa Java em execução!");
+    }
+}
+2.	Explique a diferença entre JDK, JRE e JVM.
+•	JDK, é um arquivo que configura o ambiente aonde serão feitos os códigos, que facilita na execução de qualquer aplicação.
+•	JRE, é um software necessário para que os programas em Java funcionem corretamente.
+•	JVM, é o item que o Java usa para entender os códigos feitos pelos programadores, ela realizar a compilação para bytecodes para que a máquina possa executar.
+3.	O que é um construtor em Java? Como ele funciona?
+•	É um método especial que é chamado automaticamente quando você cria um objeto de uma classe. Ele é responsável por inicializar os atributos do objeto ou executar ações necessárias para que o objeto possa ser utilizado corretamente.
+	Código:
+public class TesteConstrutor { 
+	public static void main(String[] args) { 
+	Carro carro = new Carro("Fusca"); 
+		carro.mostrarModelo(); 
+	}	 
+}
+
+4.	Qual é a diferença entre tipos primitivos e objetos em Java?
+•	Primitivos são o tamanho exemplo:	Short 2 bytes e Int 4 bytes.
+•	 Armazenamento: Tipos primitivos são armazenados diretamente com seus valores, enquanto objetos armazenam referências para os dados.
+•	Memória: Tipos primitivos usam a memória stack, enquanto objetos usam a heap.
+•	Desempenho: Tipos primitivos são mais rápidos e eficientes em termos de memória, pois não há sobrecarga de criação de objetos.
+
+	Código:
+
+public class ExemploTipos {
+    public static void main(String[] args) {
+        // Tipo primitivo
+        int numero = 10;
+
+        // Tipo objeto
+        String texto = "Hello, World!";
+
+        System.out.println("Número: " + numero);
+        System.out.println("Texto: " + texto);
+    }
+}
+5.	O que é sobrecarga de métodos em Java?
+•	Um conceito em polimorfismo que é crias variações de um mesmo método.
+	Código:
+
+public class TesteSobrecarga { 
+	public static void main(String[] args) { 
+	Calculadora calc = new Calculadora(); 
+	System.out.println(calc.somar(2, 3)); // Sobrecarga com inteiros System.out.println(calc.somar(2.5, 3.5)); // Sobrecarga com doubles 
+} 
+}
+6.	Qual a diferença entre ArrayList e LinkedList?
+•	ArrayList: Precisar de acesso rápido a elementos em uma lista e não precisa de muitas operações de inserção/remoção no meio da lista. 
+•	LinkedList: Precisar de muitas operações de inserção/remoção no meio da lista e não se importar com o acesso lento aos elementos.
+
+	Código:
+
+public class TesteListas { 
+	public static void main(String[] args) { 
+		// ArrayList 
+		ArrayList<String> 
+		arrayList = new ArrayList<>(); 
+		arrayList.add("Java"); 
+		arrayList.add("Python"); 
+		System.out.println("ArrayList: " + arrayList); 
+
+		// LinkedList 
+
+LinkedList<String> linkedList = new LinkedList<>(); 
+linkedList.add("Java"); 
+linkedList.add("Python"); 
+System.out.println("LinkedList: " + linkedList); 
+	} 
+}
+
+7.	O que é herança em Java e como funciona?
+•	É um dos conceitos de OO, no caso é herdar métodos e objetos de outra classe.
+
+	Código:
+class Cachorro extends Animal { 
+@Override 
+public void som() 
+{ System.out.println("Au Au!"); 
+	} 
+}
+8.	Explique a diferença entre == e .equals() em Java.
+•	Usar o “==” caso queira verificar se duas variáveis de referência apontam para o mesmo objeto na memória, e quando usar o equals() quando deseja comparar o conteúdo (ou a igualdade semântica) de dois objetos.
+	Código:
+public class TesteComparacao {
+    public static void main(String[] args) {
+        String a = new String("Java");
+        String b = new String("Java");
+
+        // Comparando referências de objetos
+        System.out.println(a == b); // false, porque são referências diferentes
+
+        // Comparando valores de objetos
+        System.out.println(a.equals(b)); // true, porque o conteúdo é igual
+    }
+}
+9.	O que é o tratamento de exceções e como ele é feito em Java?
+•	No Java, são tratadas como objetos que possuem o intuito de realizar uma ação inesperada na execução de um determinado código
+
+	Código:
+
+public class TesteExcecao {
+    public static void main(String[] args) {
+        try {
+            int resultado = 10 / 0; // Gera ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("Erro: " + e.getMessage());
+        } finally {
+            System.out.println("Bloco finally executado.");
+        }
+    }
+}
+10.	O que são classes abstratas e interfaces em Java? Qual a diferença entre elas?
+•	Uma interface não pode conter campos, construtores ou destrutores. Pode possuir apenas a propriedade da assinatura, mas não a implementação. Uma classe abstrata não suporta múltiplas herança. Assim, uma classe pode implementar várias interfaces, mas apenas herdar de uma classe abstrata. 
+11.	O que é encapsulamento e como ele é implementado em Java?
+•	É um conceito de POO, que no caso são os dados “private”, esse termo é usado para ocultar os dados desejados nas classes. Pode ser usado para esconder informações.
+
+Código:
+
+class ContaBancaria { 
+		private double saldo;
+12.	O que é herança e como ela funciona em Java? (Repetida)
+•	É um dos conceitos de LOO, a qual uma classe pode herdar métodos e objetos de uma classe.
+13.	Qual é a diferença entre sobrecarga e sobrescrita de métodos?
+•	A sobrescrita de métodos seria criar um novo método na classe filha contendo a mesma assinatura e mesmo tipo de retorno do método sobrescrito. (Override).  A sobrecarga, ele no caso seria, o que permite métodos de mesmo nome, mas com suas assinaturas diferentes, ex argumentos diferentes.
+14.	O que é polimorfismo e como ele se manifesta em Java?
+•	É um dos conceitos de LOO, que o programador pode realizar exemplo um método, porém esse pode ser feitos de várias formas para chegar em um só objetivo. 
+
+	Código:
+
+public class TestePolimorfismo { 
+	public static void main(String[] args) { 
+		Animal meuAnimal = new Cachorro(); 
+		meuAnimal.fazerSom(); // Polimorfismo: Cachorro faz "Au Au!" 
+
+		meuAnimal = new Gato(); 
+		meuAnimal.fazerSom(); // Polimorfismo: Gato faz "Miau!" } 
+}
+15.	O que é uma interface em Java e como ela difere de uma classe abstrata? (Repetida)
+•	Uma interface não pode conter campos, construtores ou destrutores. Pode possuir apenas a propriedade da assinatura, mas não a implementação. Uma classe abstrata não suporta múltiplas herança. Assim, uma classe pode implementar várias interfaces, mas apenas herdar de uma classe abstrata.
+
+
+16.	O que é associação, composição e agregação em POO?
+•	Composição ou Agregação é um mecanismo de reaproveitamento (reutilização) de classes utilizado pela POO para aumentar a produtividade.
+17.	O que acontece se uma classe implementar duas interfaces que possuem métodos com a mesma assinatura?
+•	Ambiguidade, a classe fornecer implementações diferentes para o mesmo método, isso causará um erro de compilação, pois o compilador não saberá qual implementação utilizar. Portanto, a classe precisa garantir que haja apenas uma implementação.
+18.	O que é a palavra-chave super em Java e quando ela deve ser usada?
+•	Usada para fazer referência ao objeto de classe pai imediato. Comumente usado para acessar métodos e construtores da classe principal, permitindo que uma subclasse herde e reutilize a funcionalidade de sua superclasse.
+19.	Como funciona o conceito de classes aninhadas (inner classes) em Java?
+•	Classes aninhadas não estáticas tem acesso a membros privados da classe que a tem (classe externa), enquanto que classes aninhadas estáticas não tem acesso aos membros da classe externa.
+20.	O que é um método final e uma classe final em Java?
+•	Um método final é um método que não pode ser sobrescrito (overridden) por subclasses. Ou seja, uma vez que um método é marcado como final, ele não pode ser alterado em uma classe filha, mesmo que a classe filha estenda a classe que contém esse método.
+Código:
+final class Carro {
+    public final void mostrarInfo() {
+        System.out.println("Carro - Informações");
+    }
+}
+public class TesteFinal {
+    public static void main(String[] args) {
+        Carro carro = new Carro();
+        carro.mostrarInfo();
+    }
+}
+
+Estática: pode chamar de qualquer lugar e momento. (Classes globais).
